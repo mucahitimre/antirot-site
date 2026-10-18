@@ -1,0 +1,57 @@
+/* antirot.app: the app's palette (DesignSystem/Colors.swift), light and dark. */
+:root {
+  --surface: #F6F7FA;
+  --surface-raised: #FFFFFF;
+  --line: #E1E5EE;
+  --ink: #151A26;
+  --ink-muted: #5A6275;
+  --dose: #2F5BD3;
+  --on-dose: #FFFFFF;
+  --dose-soft: #E3EAFB;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: #0F121A;
+    --surface-raised: #181C27;
+    --line: #2B3142;
+    --ink: #EEF1F7;
+    --ink-muted: #A3AABB;
+    --dose: #8AA9FF;
+    --on-dose: #0B1430;
+    --dose-soft: #1E2A4D;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+a { color: var(--dose); }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+.brand img { width: 44px; height: 44px; border-radius: 11px; }
+.brand b { font: 800 22px/1 ui-rounded, "SF Pro Rounded", -apple-system, sans-serif; }
+.hero { padding: 48px 0 24px; }
+.hero h1 { font: 800 clamp(34px, 8vw, 52px)/1.1 ui-rounded, "SF Pro Rounded", -apple-system, sans-serif; margin: 0 0 12px; }
+.hero p { font-size: 19px; color: var(--ink-muted); margin: 0; }
+.tagline { font-weight: 600; color: var(--dose) !important; margin-top: 8px !important; }
+.cards { display: grid; gap: 12px; margin: 32px 0; }
+.card { background: var(--surface-raised); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; }
+.card h3 { margin: 0 0 4px; font-size: 17px; }
+.card p { margin: 0; color: var(--ink-muted); font-size: 15px; }
+.badge { display: inline-block; background: var(--dose-soft); color: var(--ink); border-radius: 999px; padding: 6px 14px; font-weight: 600; font-size: 15px; }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--ink-muted); font-size: 14px; display: flex; flex-wrap: wrap; gap: 16px; }
+footer a { color: var(--ink-muted); }
+.doc h1 { font: 800 32px/1.2 ui-rounded, "SF Pro Rounded", -apple-system, sans-serif; margin: 32px 0 4px; }
+.doc h2 { font-size: 21px; margin: 32px 0 8px; }
+.doc .meta { color: var(--ink-muted); font-size: 15px; margin: 0 0 24px; }
+.doc .summary { background: var(--dose-soft); border-radius: 16px; padding: 14px 18px; }
+.doc .summary ul { margin: 8px 0 0; padding-left: 20px; }
+.doc table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 8px 0; display: block; overflow-x: auto; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+.doc th { color: var(--ink-muted); font-weight: 600; }
+.doc li { margin: 4px 0; }
